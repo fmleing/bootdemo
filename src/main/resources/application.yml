@@ -32,3 +32,8 @@ spring:
 mybatis:
   mapper-locations: classpath:com/example/bootdemo/**/**.xml
   type-aliases-package: classpath:com.example.bootdemo.**.entity
+
+
+#log
+logging:
+  config: classpath:logback.xml
