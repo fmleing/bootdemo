@@ -2,7 +2,9 @@ package com.example.bootdemo.boot.controller;
 
 import com.example.bootdemo.boot.dao.BootMapper;
 import com.example.bootdemo.boot.entity.Boot;
+import com.example.bootdemo.boot.service.BootService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class BootController {
 
     @Autowired
-    private BootMapper bootMapper;
+    private BootService bootService;
 
     @RequestMapping("/hello")
     public Boot hello() {
-        Boot boot = bootMapper.selectByPrimaryKey(1);
+        Boot boot = bootService.login();
         return boot;
     }
 }
